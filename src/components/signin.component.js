@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../firebase';
+import './sign_.component.css';
 
 export default class SignIn extends Component {
   
@@ -11,6 +14,7 @@ export default class SignIn extends Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.auth = auth;
   }
 
   handleInputChange(event) {
@@ -30,25 +34,42 @@ export default class SignIn extends Component {
 
   login = async () => {
     //login here
+    try {
+      const user = await signInWithEmailAndPassword(this.auth, this.state.email, this.state.password);
+      const u = this.auth.currentUser;
+      const uid = u.uid;
+      // redirect to dashboard page
+      window.location.href = '/dashboard/1'
+      }
+      catch(error) {
+        console.log(error.message);
+        alert(error.message);
+      }
   };
 
     render() {
       return (
-        <div className="slide-up">
-          <div className="border">
-            <h1>welcome back!</h1>
-            <p>please enter your details:</p>
+        <div className="page">
+        <div className="content">
+          <div className="form-section">
+            <h1 className="heading">Welcome Back!</h1>
 
-           <form class="form" onSubmit={this.handleSubmit}>
+           <form className="form" onSubmit={this.handleSubmit}><br></br>
           
-            <input name="email" type="text" value={this.state.value} placeholder="email" onChange={this.handleInputChange} />
-            <input name="password" type="password" value={this.state.value} placeholder="password" onChange={this.handleInputChange} />
+            <label className="input-label" for="email">Email</label>
+            <input className="input-field" name="email" type="text" value={this.state.value} placeholder="sample@email.com" onChange={this.handleInputChange} />
+            
+            <label className="input-label" for="email">Password</label>
+            <input className="input-field" name="password" type="password" value={this.state.value} placeholder="your password" onChange={this.handleInputChange} />
 
-            <input type="submit" value="Submit" />
-            <p className="body">don't have an account? <a className="body" href="/sign-up">sign up here!</a></p>
+            <input className="submit-button" type="submit" value="Submit" />
+            <p className="redirect">Don't have an account? <a className="redirect-link" href="/sign-up">Sign up here!</a></p>
           </form>
-  
           </div>
+          <div className="info-section">
+            <p>i'm gonna be an image one day!</p>
+          </div>
+        </div>
         </div>
       );
     }

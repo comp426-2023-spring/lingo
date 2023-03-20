@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { auth } from '../firebase';
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import './sign_.component.css';
 
 export default class SignUp extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -38,6 +38,7 @@ export default class SignUp extends Component {
         const u = this.auth.currentUser;
         const uid = u.uid;
         // redirect to dashboard page
+        window.location.href = '/dashboard/'
         }
         catch(error) {
         console.log(error.message);
@@ -47,20 +48,27 @@ export default class SignUp extends Component {
 
   render() {
     return (
-      <div className="slide-up">
-        <div className="border">
-          <h1>welcome to lingo!</h1>
-          <p>please sign up here:</p>
+      <div className="page">
+      <div className="content">
+        <div className="form-section">
+          <h1 className="heading">Create Account</h1>
+        
         <form className="form" onSubmit={this.handleSubmit}><br></br>
-                 
-        <input name="email" type="text" value={this.state.value} placeholder="email" onChange={this.handleInputChange} />
-        <input name="password" type="password" value={this.state.value} placeholder="password" onChange={this.handleInputChange} />
+          <label className="input-label" for="email">Email</label>
+          <input className="input-field" name="email" type="text" value={this.state.value} placeholder="sample@email.com" onChange={this.handleInputChange} />
+          
+          <label className="input-label" for="email">Password</label>
+          <input className="input-field" name="password" type="password" value={this.state.value} placeholder="your password" onChange={this.handleInputChange} />
 
-        <input type="submit" value="Submit" />
-        <p className="body">already have an account? <a className="body" href="/sign-in">sign in here!</a></p>
+          <input className="submit-button" type="submit" value="Sign Up"/>
+          <p className="redirect">Already have an account? <a className="redirect-link" href="/sign-in">Log in here!</a></p>
+        
         </form>
         </div>
-
+        <div className="info-section">
+            <p>i'm gonna be an image one day!</p>
+          </div>
+      </div>
       </div>
     );
   } 

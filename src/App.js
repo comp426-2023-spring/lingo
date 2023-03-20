@@ -5,10 +5,12 @@ import SignUp from "./components/signup.component";
 import SignIn from "./components/signin.component";
 import Dashboard from "./components/dashboard.component";
 import Profile from "./components/profile.component";
+import NavBar from './components/navbar.component';
 
 function App() {
   return (
     <BrowserRouter>
+    <NavBar/>
     <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/sign-up" element={<SignUp />}></Route>

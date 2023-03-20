@@ -1,0 +1,91 @@
+.page {
+  padding: 1.5rem 3rem;
+}
+
+.content {
+  background-color: #d9daef;
+  border-radius: 10px;
+  display: flex;
+  column-count: 2;
+  column-fill: balance;
+  box-shadow: 10px 10px 10px rgb(211, 211, 211);
+}
+
+.form-section {
+  padding: 8.25rem 1rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  text-align: center;
+
+  flex: 1 1 50%;
+  width: 0;
+}
+
+.heading {
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5vw;
+}
+
+.input-label {
+  text-align: left;
+  font-size: 1em;
+  padding-bottom: 5px;
+  font-weight: 500;
+}
+
+.input-field {
+  padding: 0.5rem 0;
+  font-size: 1em;
+  border-width: 0 0 1.5px 0;
+  margin-bottom: 1rem;
+  border-style: solid;
+  border-color: #686B9F;
+  background-color: transparent;
+  color: rgb(83, 75, 92);
+}
+
+.input-field::placeholder {
+  font-size: 1em;
+  color: rgb(83, 75, 92);
+}
+
+.input-field:focus {
+  outline: none;
+}
+
+.input-field:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.submit-button {
+  padding: 0.75rem 0rem;
+  background-color: #686B9F;
+  border: none;
+  color: white;
+  border-radius: 3px;
+  font-size: 1rem;
+}
+
+.submit-button:hover {
+  background-color:#50527e;
+}
+
+.redirect {
+  margin-top: 2rem;
+  color: rgb(83, 75, 92);
+}
+
+.info-section {
+  background-color: #686B9F;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  flex: 1 1 50%;
+  width: 0;
+}
