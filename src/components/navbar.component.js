@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import './navbar.component.css';
 import { Link } from 'react-router-dom';
+import { auth } from '../firebase';
 
 export default class NavBar extends Component {
+
+  constructor(props) {
+    super(props);
+    this.user = auth.currentUser;
+  }
 
   render() {
     return (
@@ -15,7 +21,9 @@ export default class NavBar extends Component {
           <p className='title'>lingo</p>
         </div>
         <div className='right-container'>
-          <Link to="/sign-up" className="link"><button className="nav-button">Sign Up</button></Link>
+          {this.user ? 
+          <Link to="/sign-up" className="link"><button className="nav-button">Sign Up</button></Link> : 
+          <Link to="/log-out" className="link"><button className="nav-button">Log Out</button></Link>}
         </div>
       </div>
 

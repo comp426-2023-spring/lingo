@@ -8,7 +8,9 @@ export default class SignUp extends Component {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      fname: '',
+      lname: ''
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -37,7 +39,6 @@ export default class SignUp extends Component {
         const user = await createUserWithEmailAndPassword(this.auth, this.state.email, this.state.password);
         const u = this.auth.currentUser;
         const uid = u.uid;
-        // redirect to dashboard page
         window.location.href = '/dashboard/'
         }
         catch(error) {
@@ -54,6 +55,16 @@ export default class SignUp extends Component {
           <h1 className="heading">Create Account</h1>
         
         <form className="form" onSubmit={this.handleSubmit}><br></br>
+          <div className="horizontal-box">
+            <div className="left">
+              <label className="input-label" for="fname">First Name</label>
+              <input className="input-field" name="fname" type="text" value={this.state.value} placeholder="Jane" onChange={this.handleInputChange} />
+            </div>
+            <div className="left">
+              <label className="input-label" for="lname">Last Name</label>
+              <input className="input-field" name="lname" type="text" value={this.state.value} placeholder="Doe" onChange={this.handleInputChange} />
+            </div>
+          </div>
           <label className="input-label" for="email">Email</label>
           <input className="input-field" name="email" type="text" value={this.state.value} placeholder="sample@email.com" onChange={this.handleInputChange} />
           
