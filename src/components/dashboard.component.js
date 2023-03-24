@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import { auth } from '../firebase';
+import { fire } from '../firebase';
+import { getAuth } from 'firebase/auth';
 
 export default class Dashboard extends Component {
 
   constructor(props) {
     super(props);
-    this.user = auth.currentUser;
-    console.log(this.user);
+    //this.auth = getAuth();
+    console.log(fire.auth);
+    //this.user = fire.auth.currentUser;
+    //console.log(this.user);
   }
 
   render() {
