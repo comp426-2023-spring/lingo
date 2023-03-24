@@ -38,8 +38,8 @@ export default class SignIn extends Component {
       const user = await signInWithEmailAndPassword(this.auth, this.state.email, this.state.password);
       const u = this.auth.currentUser;
       const uid = u.uid;
-      // redirect to dashboard page
-      window.location.href = '/dashboard/1'
+      // redirect to cardsets page
+      window.location.href = '/cardsets/1'
       }
       catch(error) {
         console.log(error.message);

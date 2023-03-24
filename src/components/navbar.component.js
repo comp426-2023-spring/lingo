@@ -14,9 +14,13 @@ export default class NavBar extends Component {
           </Link>
           <p className='title'>lingo</p>
         </div>
+        <div className='left-container'>
+          <Link to="/cardsets" className="link"><button className="nav-button">Cardsets</button></Link>
+        </div>
         <div className='right-container'>
           <Link to="/sign-up" className="link"><button className="nav-button">Sign Up</button></Link>
         </div>
+        
       </div>
 
     );

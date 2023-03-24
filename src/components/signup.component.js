@@ -37,8 +37,8 @@ export default class SignUp extends Component {
         const user = await createUserWithEmailAndPassword(this.auth, this.state.email, this.state.password);
         const u = this.auth.currentUser;
         const uid = u.uid;
-        // redirect to dashboard page
-        window.location.href = '/dashboard/'
+        // redirect to cardsets page
+        window.location.href = '/cardsets/'
         }
         catch(error) {
         console.log(error.message);
