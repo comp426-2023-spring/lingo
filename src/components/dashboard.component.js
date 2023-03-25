@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
-import { fire } from '../firebase';
-import { getAuth } from 'firebase/auth';
+import { fire, auth } from '../firebase';
+import { onAuthStateChanged } from "firebase/auth";
 
 export default class Dashboard extends Component {
 
   constructor(props) {
     super(props);
-    //this.auth = getAuth();
-    console.log(fire.auth);
-    //this.user = fire.auth.currentUser;
-    //console.log(this.user);
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        console.log(uid);
+      } else {
+        console.log("no one signed in booo");
+      }
+    })
+    // this.user = auth.currentUser;
+    // console.log(this.user);
   }
 
   render() {

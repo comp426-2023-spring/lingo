@@ -37,8 +37,7 @@ export default class SignIn extends Component {
     try {
       const user = await signInWithEmailAndPassword(this.auth, this.state.email, this.state.password);
       const u = this.auth.currentUser;
-      const uid = u.uid;
-      window.location.href = '/dashboard/'
+      window.location.href = '/dashboard/';
       }
       catch(error) {
         console.log(error.message);

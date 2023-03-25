@@ -9,11 +9,12 @@ export default class LogOut extends Component {
     signOut(getAuth()).then(() => {
       // Sign-out successful.
       console.log("yayy it worked");
+      window.location.href = '/';
+      window.reload();
     }).catch((error) => {
       // An error happened.
     });
-    window.location.href = '/';
-    window.reload();
+    
   }
 
   render() {

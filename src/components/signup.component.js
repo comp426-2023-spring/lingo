@@ -36,8 +36,8 @@ export default class SignUp extends Component {
 
   register = async () => {
     try {
-        await createUserWithEmailAndPassword(this.auth, this.state.email, this.state.password);
-        window.location.href = '/dashboard/'
+        const user = await createUserWithEmailAndPassword(this.auth, this.state.email, this.state.password);
+        window.location.href = '/dashboard/';
         }
         catch(error) {
         console.log(error.message);
