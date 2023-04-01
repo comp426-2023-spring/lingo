@@ -2,10 +2,8 @@ import React, { Component, useState } from 'react';
 import { auth } from '../firebase';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import './sign_.component.css';
-import { useAuth } from '../AuthContext'
 
 export default function SignUp(props) {
-  const { signUp } = useAuth();
   const [state, setState] = useState({
     fname : "",
     lname : "",

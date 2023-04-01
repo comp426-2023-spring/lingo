@@ -1,11 +1,22 @@
-import React, { Component, useContext } from 'react';
+import React, { useState } from 'react';
 import './navbar.component.css';
 import { Link } from 'react-router-dom';
 import { auth } from '../firebase';
-import { onAuthStateChanged } from "firebase/auth";
-import loggedIn from '../loggedInContext';
 
 export default function NavBar() {
+
+  const [loggedIn, setLoggedIn] = useState(false);
+  console.log("set to false");
+  auth.onAuthStateChanged((user) => {
+    if (user) {
+      setLoggedIn(true);
+      console.log("true");
+    } else {
+      setLoggedIn(false);
+      console.log("false");
+    }
+  });
+  
 
   return (
     <div className='navbar'>

@@ -10,17 +10,17 @@ import LogOut from './components/logout.component';
 
 function App() {
   return (
-    <BrowserRouter>
-    <NavBar/>
-    <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/sign-up" element={<SignUp />}></Route>
-        <Route path="/sign-in" element={<SignIn />}></Route>
-        <Route path="/dashboard/" element={<Dashboard />}></Route>
-        <Route path="/profile/" element={<Profile />}></Route>
-        <Route path="/log-out/" element={<LogOut />}></Route>
-    </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+      <NavBar/>
+      <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/sign-up" element={<SignUp />}></Route>
+          <Route path="/sign-in" element={<SignIn />}></Route>
+          <Route path="/dashboard/" element={<Dashboard />}></Route>
+          <Route path="/profile/" element={<Profile />}></Route>
+          <Route path="/log-out/" element={<LogOut />}></Route>
+      </Routes>
+      </BrowserRouter>
   );
 }
 
