@@ -15,4 +15,4 @@ const fire = initializeApp(firebaseConfig);
 const db = getFirestore();
 const auth = getAuth(fire);
 
-export {auth, db};
+export {auth, db, fire};
