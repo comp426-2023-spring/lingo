@@ -20,7 +20,10 @@ export default class Cardsets extends Component {
   async handleSubmit(event) {
     console.log("make card");
     event.preventDefault();
-    // this.setDoc();
+    this.setDoc();
+    this.setDoc2();
+    this.setDoc3();
+    this.setDoc4();
     this.getDoc();
   }
   // Add a new document with a generated ID
@@ -28,10 +31,55 @@ export default class Cardsets extends Component {
 setDoc = async () => {
   try {
   const docRef = await addDoc(collection(db, "sets"), {
-    card_ids: [''],
-    languages: [''],
-    sides: 3,
-    user: '',
+    card_ids: ['Yessir'],
+    languages: ['Enlgish', 'Spanish'],
+    sides: 4,
+    user: 'JoMama',
+  })
+  console.log("The cardset ID: ", docRef.id);  
+} catch(error) {
+  console.log(error.message);
+  alert(error.message);
+}
+};
+
+setDoc2 = async () => {
+  try {
+  const docRef = await addDoc(collection(db, "sets"), {
+    card_ids: ['nope'],
+    languages: ['Japanese', 'French'],
+    sides: 5,
+    user: 'JoMama',
+  })
+  console.log("The cardset ID: ", docRef.id);  
+} catch(error) {
+  console.log(error.message);
+  alert(error.message);
+}
+};
+
+setDoc3 = async () => {
+  try {
+  const docRef = await addDoc(collection(db, "sets"), {
+    card_ids: ['no'],
+    languages: ['French', 'English'],
+    sides: 4,
+    user: 'JoMama',
+  })
+  console.log("The cardset ID: ", docRef.id);  
+} catch(error) {
+  console.log(error.message);
+  alert(error.message);
+}
+};
+
+setDoc4 = async () => {
+  try {
+  const docRef = await addDoc(collection(db, "sets"), {
+    card_ids: ['yes'],
+    languages: ['Hindi'],
+    sides: 2,
+    user: 'JoMama',
   })
   console.log("The cardset ID: ", docRef.id);  
 } catch(error) {
@@ -91,9 +139,10 @@ getDoc = async () => {
 
       <div>
           <h1>Cardsets</h1>
-          <form className="button" onSubmit = {this.handleSubmit}>
+          
+          {/* <form className="button" onSubmit = {this.handleSubmit}>
           <input type ="submit" value="test"></input>
-          </form>
+          </form> */}
       </div>
 
     );

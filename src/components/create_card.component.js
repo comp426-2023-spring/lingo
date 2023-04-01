@@ -49,30 +49,30 @@ export default class CreateCard extends Component {
     //     }
     // };
   
-    //   render() {
-    //     return (
-    //       <div className="page">
-    //       <div className="content">
-    //         <div className="form-section">
-    //           <h1 className="heading">Welcome Back!</h1>
+      render() {
+        return (
+          <div className="page">
+          <div className="content">
+            <div className="form-section">
+              <h1 className="heading">Welcome Back!</h1>
   
-    //          <form className="form" onSubmit={this.handleSubmit}><br></br>
+             <form className="form" onSubmit={this.handleSubmit}><br></br>
             
-    //           <label className="input-label" for="email">Email</label>
-    //           <input className="input-field" name="email" type="text" value={this.state.value} placeholder="sample@email.com" onChange={this.handleInputChange} />
+              <label className="input-label" for="email">Email</label>
+              <input className="input-field" name="email" type="text" value={this.state.value} placeholder="sample@email.com" onChange={this.handleInputChange} />
               
-    //           <label className="input-label" for="email">Password</label>
-    //           <input className="input-field" name="password" type="password" value={this.state.value} placeholder="your password" onChange={this.handleInputChange} />
+              <label className="input-label" for="email">Password</label>
+              <input className="input-field" name="password" type="password" value={this.state.value} placeholder="your password" onChange={this.handleInputChange} />
   
-    //           <input className="submit-button" type="submit" value="Submit" />
-    //           <p className="redirect">Don't have an account? <a className="redirect-link" href="/sign-up">Sign up here!</a></p>
-    //         </form>
-    //         </div>
-    //         <div className="info-section">
-    //           <p>i'm gonna be an image one day!</p>
-    //         </div>
-    //       </div>
-    //       </div>
-    //     );
-    //   }
+              <input className="submit-button" type="submit" value="Submit" />
+              <p className="redirect">Don't have an account? <a className="redirect-link" href="/sign-up">Sign up here!</a></p>
+            </form>
+            </div>
+            <div className="info-section">
+              <p>i'm gonna be an image one day!</p>
+            </div>
+          </div>
+          </div>
+        );
+      }
     }
