@@ -7,6 +7,7 @@ import Dashboard from "./components/dashboard.component";
 import Profile from "./components/profile.component";
 import NavBar from './components/navbar.component';
 import LogOut from './components/logout.component';
+import SetPage from './components/set-page.component';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/dashboard/" element={<Dashboard />}></Route>
           <Route path="/profile/" element={<Profile />}></Route>
           <Route path="/log-out/" element={<LogOut />}></Route>
+          <Route path="/set/:id" element={<SetPage />}></Route>
       </Routes>
       </BrowserRouter>
   );
