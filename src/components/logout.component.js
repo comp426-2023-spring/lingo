@@ -1,18 +1,19 @@
-import { Component } from 'react';
-//import { auth } from '../firebase';
+import { Component, useContext } from 'react';
 import { getAuth, signOut } from 'firebase/auth';
+import loggedIn from '../loggedInContext';
 
 export default class LogOut extends Component {
 
   constructor(props) {
     super(props);
-    signOut(getAuth()).then(() => {
-      // Sign-out successful.
+    signOut(getAuth()).then(() => { 
+      loggedIn.switchAuth();
       console.log("yayy it worked");
       window.location.href = '/';
       window.reload();
     }).catch((error) => {
-      // An error happened.
+      console.log("logout error");
+      console.log(error);
     });
     
   }
