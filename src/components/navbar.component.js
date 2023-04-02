@@ -6,14 +6,11 @@ import { auth } from '../firebase';
 export default function NavBar() {
 
   const [loggedIn, setLoggedIn] = useState(false);
-  console.log("set to false");
   auth.onAuthStateChanged((user) => {
     if (user) {
       setLoggedIn(true);
-      console.log("true");
     } else {
       setLoggedIn(false);
-      console.log("false");
     }
   });
   
@@ -21,7 +18,7 @@ export default function NavBar() {
   return (
     <div className='navbar'>
       <div className='left-container'>
-        <Link to="/" class="link">
+        <Link to="/" className="link">
           <img className='logo' src='logo192.png' alt='lingo-logo'/>
         </Link>
         <p className='title'>lingo</p>

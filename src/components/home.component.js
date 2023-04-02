@@ -6,7 +6,7 @@ export default class Home extends Component {
   render() {
     return (
       
-      <div class="home-page">
+      <div className="home-page">
           <h1>Welcome to Lingo!</h1>
           <p>Lingo is a multi-sided flashcard application that is geared towards language learning!</p>
       </div>
