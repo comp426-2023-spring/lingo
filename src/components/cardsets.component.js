@@ -4,6 +4,8 @@ import { collection, doc, setDoc, addDoc, getDoc, getDocs, query, where } from "
 import { auth, db } from '../firebase';
 import { onAuthStateChanged } from '@firebase/auth';
 
+var set_names = [];
+
   export default function CardSets() {
     let subject = null;
     const params = useParams();
@@ -14,7 +16,6 @@ import { onAuthStateChanged } from '@firebase/auth';
       }
     })
   
-    var set_names = [];
     // var set_details = null;
     // var languages = null;
     // var card_ids = null;
@@ -41,6 +42,9 @@ import { onAuthStateChanged } from '@firebase/auth';
 
       <div>
           <h1>Cardsets</h1>
+          <table>
+            <tr><td><button class = "cardset">CardsetName</button></td></tr>
+          </table>
       </div>
 
     );
