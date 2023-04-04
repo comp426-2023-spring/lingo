@@ -43,7 +43,7 @@ var set_names = [];
       <div>
           <h1>Cardsets</h1>
           <table>
-            <tr><td><button class = "cardset">CardsetName</button></td></tr>
+            <tr><td><button class = "cardset"></button></td></tr>
           </table>
       </div>
 
