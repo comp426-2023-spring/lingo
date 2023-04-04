@@ -8,8 +8,8 @@ var set_names = [];
 
   export default function CardSets() {
     let subject = null;
-    const params = useParams();
-    const set_id = params.id
+    // const params = useParams();
+    // const set_id = params.id
     onAuthStateChanged(auth, (user) => {
       if (user) {
         subject = user;
@@ -34,6 +34,15 @@ var set_names = [];
         i++;
       });
     }
+
+    function makeButtons(c) {
+      for (var i = 0; i < c.length; i++) {
+        $('.button-holder').append('<button value=' + c[i] + '>' + c[i] +
+          '</button>');
+      }
+    }
+    
+    makeButtons(set_names);
   
 
 // Firestore data converter
@@ -42,10 +51,8 @@ var set_names = [];
 
       <div>
           <h1>Cardsets</h1>
-          <table>
-            <tr><td><button class = "cardset"></button></td></tr>
-          </table>
+          <div class="button-holder"></div>
       </div>
 
     );
-        }
+}
